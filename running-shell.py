@@ -157,15 +157,19 @@ def main():
                     print(f" {bot.participants[participant]['name']}: ${bot.participants[participant]['profit']}")
                 print("\n #SuperBowlSquares")
             else:
-                score_type = Params.score_type[args[0].lower()]
-                team = args[1].lower()
-                team = team.capitalize()
-                if team not in Params.teams:
-                    print(team)
-                    print("Invalid team name. Please try again.")
-                    continue
+                try:
+                    score_type = Params.score_type[args[0].lower()]
+                    team = args[1].lower()
+                    team = team.capitalize()
+                    if team not in Params.teams:
+                        print(team)
+                        print("Invalid team name. Please try again.")
+                        continue
 
-                bot.score_update(team, score_type)
+                    bot.score_update(team, score_type)
+                except KeyError:
+                    print("Invalid score type. Please try again.")
+                    continue
 
         except (IndexError, ValueError):
             print("Invalid input. Please try again")
