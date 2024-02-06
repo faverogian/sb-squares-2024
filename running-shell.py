@@ -60,7 +60,11 @@ class Params:
         'NS': {
             'name': 'Noah Scholl',
             'profit': 0
-        }
+        },
+        'SH': {
+            'name': 'Stevie Hill',
+            'profit': 0
+        },
     }
     pot = 200
     pay = 5
@@ -168,7 +172,7 @@ def main():
 
                     bot.score_update(team, score_type)
                 except KeyError:
-                    print("Invalid score type. Please try again.")
+                    print("Invalid score update. Please try again.")
                     continue
 
         except (IndexError, ValueError):
