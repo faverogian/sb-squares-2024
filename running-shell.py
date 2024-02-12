@@ -23,46 +23,46 @@ class Params:
             'name': '2pt Conversion'
         }
     }
-    teams = ['Chiefs', '49ers']
+    teams = ['Team 1', 'Team 2']
     participants = {
-        'GF': {
-            'name': 'Gian Favero',
+        'P1': {
+            'name': 'Participant 1',
             'profit': 0
         },
-        'TB': {
-            'name': 'Thomas Byrne',
+        'P2': {
+            'name': 'Participant 2',
             'profit': 0
         },
-        'AI': {
-            'name': 'Adrian Iannetta',
+        'P3': {
+            'name': 'Participant 3',
             'profit': 0
         },
-        'RM': {
-                'name': 'Robert McVinnie',
-                'profit': 0
-        },
-        'BA': {
-            'name': 'Brayden Amlin',
+        'P4': {
+            'name': 'Participant 4',
             'profit': 0
         },
-        'MA': {
-            'name': 'Matthew Ammoscato',
+        'P5': {
+            'name': 'Participant 5',
             'profit': 0
         },
-        'AO': {
-            'name': 'Andrew Ogley',
+        'P6': {
+            'name': 'Participant 6',
             'profit': 0
         },
-        'SC': {
-            'name': 'Steven Caro',
+        'P7': {
+            'name': 'Participant 7',
             'profit': 0
         },
-        'NS': {
-            'name': 'Noah Scholl',
+        'P8': {
+            'name': 'Participant 8',
             'profit': 0
         },
-        'SH': {
-            'name': 'Stevie Hill',
+        'P9': {
+            'name': 'Participant 9',
+            'profit': 0
+        },
+        'P10': {
+            'name': 'Participant 10',
             'profit': 0
         },
     }
@@ -72,13 +72,13 @@ class Params:
 # Load grid from .csv file
 def load_grid(file_path: str):
     grid = []
-    with open('SB_Squares_2024.csv', 'r') as file:
+    with open(file_path, 'r') as file:
         for line in file:
             row = line.strip().split(',')
             grid.append(row)
     return grid
 
-grid = load_grid('SB_Squares_2024.csv')
+grid = load_grid('SB_Squares.csv')
 
 class SquareBot:
     def __init__(self):
